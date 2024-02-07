@@ -1,0 +1,19 @@
+// Установка minikube, kubectl
+
+
+docker image build . -t my_jenkins -f Jenkins/Dockerfile
+minikube image load  --overwrite=true my_jenkins:latest
+
+minikube start // стартуем кластер
+minikube dashboard // открываем дэщбоард | minikube dashboard --url
+
+
+kubectl apply -f Jenkins/service.yaml && \
+kubectl apply -f Jenkins/storage.yaml && \
+kubectl apply -f Jenkins/permissions.yaml && \
+kubectl apply -f Jenkins/service.yaml && \
+kubectl apply -f Jenkins/jenkins-deploy.yaml
+
+helm create nginx_chart
+
+
