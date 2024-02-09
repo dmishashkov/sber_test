@@ -1,3 +1,4 @@
+#!/bin/bash
 docker image build . -t my_jenkins -f Jenkins/Dockerfile
 minikube image load  --overwrite=true my_jenkins:latest
 
